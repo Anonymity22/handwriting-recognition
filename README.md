@@ -17,12 +17,12 @@ Considering handwriting in different position, orientation, speed, and size, we 
 
 [data_aug.py](/data_aug.py) can help you to realize data agumentation on your own dataset.
 
-Usage:
+###Usage:
 ```
 python data_aug.py
 ```
 
-## System Overview
+## System overview
 **![Framework](/doc/Framework.png)**
 To achieve the free-style and user-independent handwriting recognition, we propose a recognition model to support free and continuous handwriting across different users. The model combines the recognition capability of Convolutional Recurrent Neural Network (CRNN) and the Domain-Adversarial Training of Neural Networks (DANN). The model is designed for UWB based handwriting recognition when a small number of UWB based data sets are obtained. Our model considers both recognition accuracy and generalization ability. As shown in [the framework of our system](/doc/Framework.png), based on the handwriting data collected by UWB, the word is constructed through 3D-projection and trajectory filtering. Then the data are enhanced to form a relative large number of  training sets. In the process of continuous and cross-user recognition, one task is to construct a recognizer. When there is no letter segmentation, the recognizer can correctly identify the whole word. Another task is to construct a domain discriminator and support the cross-user capability. To enable the generalization capability, we adopt an typical handwriting dataset and use adversarial network to extract the word features independent to users. And the two tasks can be trained and learned together to achieve the optimal performance of both.**
 
