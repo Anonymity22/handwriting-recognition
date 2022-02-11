@@ -6,7 +6,11 @@ A machine learning model designed for UWB-based in-air handwriting recognition.
 
 Using a watch equipped with UWB, users can write in the air while wearing the watch and interact with smart phone, TV and other devices for handwriting recongnition. Due to the large sensing range of UWB, it will not be restricted by the distance such as WiFi and acoustic sensing methods.  UWB-based sensing has the opportunity to support users to continuously perform handwriting in a more free manner. By designing a handwriting recognition method, the in-air handwriting interaction can be more flexible.
 
-## Data process and augmentation
+## Handwriting data collection and agumentation
+
+Below are a few samples of handwriting words collected by UWB integrated on iPhone and Apple Watch.
+
+
 The deep neutral network needs large training dataset to obtain the high-accuracy performance. However, it is difficult to manually collect large number of handwriting samples in practice. We employ data augmentation technique to enlarge the dataset. Considering handwriting in different position, orientation, speed, and size, we correspondingly conduct \textit{translation}, \textit{rotation}, \textit{stretch} and \textit{scaling} operations for collected data samples. Note that user performs handwriting in 3D-space, we process the UWB collected handwriting trajectory data through 3D-mapping as in Section 4 and thus compress to the 2D plane. After processing with these operations, the data can be increased. Besides, to further improve model generalization ability, we design to combine the existing handwritten dataset~\cite{Handwriting} to enhance the training set. We integrate a commonly used generated handwriting dataset, which includes 8 different writing styles. 
 
 ## System Overview
@@ -28,3 +32,5 @@ the probability. Thus, the CTC loss function ($L_p$) is calculated using cross e
 
 ### Domain classification
 To enhance the system generalization ability on different users and unseen words, we need to extract features independently only related to word content and cross different users, that is, when a new user comes, the handwriting can be directly recognized. We introduce a adversarial network to train the model. The public dataset is used as source domain, which contains handwriting words with different writing style. Our UWB collected dataset is the target domain. We design the domain classifier so that it cannot identify whether it is the word from the public data set or the word from UWB data set. This ensures that the feature extraction is independent with the writing style between users. The loss function of domain classification ($L_d$) is also calculated using cross entropy with domain label.
+
+## Usage
