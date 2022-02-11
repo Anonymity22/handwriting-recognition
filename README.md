@@ -1,6 +1,6 @@
 # In-air Handwriting Recognition
 
-A fast parallel implementation of CTC, on both CPU and GPU.
+A learning model for UWB-based in-air handwriting recognition
 
 ## Introduction
 
