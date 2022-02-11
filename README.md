@@ -33,10 +33,14 @@ As shown in framework, the raw data is first enhanced to form a relatively large
 
 ## Model design
 
+Here, we briefly introduce the function of each module in our recognition model.
+
 ### Feature extraction
+
 We employ CNN to design the feature extraction module. The feature extraction layer is composed of 7 layers of CNN, the dimensions of the feature extraction layer are clearly marked in the framework. The output of CNN is a sequence
 
 ### Word recognition
+
 To realize word recognition, we build a two-layer bidirectonal LSTM network to process the feature sequence. The goal of LSTM is to predict which character this
 
 Based on the feature extraction module, we notice that the feature sequence extracted by CNN corresponds to different positions of word. This means that a feature sequence may correspond to a part of a letter, and adjacent feature sequences can also reflect the difference between adjacent letters. To recognize words, we built a two-layer bidirectional LSTM (Long Short-term Memory) network to process the feature sequence corresponding to the probability vector on different time. The goal of LSTM is to predict which character this rectangular area is, that is, to predict according to the feature vector extracted by the multi-layer CNN, and obtain the softmax probability distribution of all letters.
@@ -45,6 +49,7 @@ Then we employ Connectionist Temporal Classification (CTC) layer~\cite{} to deal
 the probability. Thus, the CTC loss function ($L_p$) is calculated using cross entropy with word label.
 
 ### Domain classification
+
 To enhance the system generalization ability on different users and unseen words, we need to extract features independently only related to word content and cross different users, that is, when a new user comes, the handwriting can be directly recognized. We introduce a adversarial network to train the model. The public dataset is used as source domain, which contains handwriting words with different writing style. Our UWB collected dataset is the target domain. We design the domain classifier so that it cannot identify whether it is the word from the public data set or the word from UWB data set. This ensures that the feature extraction is independent with the writing style between users. The loss function of domain classification ($L_d$) is also calculated using cross entropy with domain label.
 
 ## Usage
