@@ -23,7 +23,7 @@ Algorithm in [data_aug.py](/data_aug.py) can help you realize data agumentation 
 python data_aug.py
 ```
 
-For each input picture, you will get six enhanced picture after being processed by our algorithm. The size of each enhanced picture is 100*32 pixels. 
+For each input picture, you will get six enhanced picture after being processed by our algorithm. The defalut size of enhanced picture is 100\*32 pixels. 
 
 ## System overview
 
@@ -39,7 +39,7 @@ Here, we briefly introduce the function of each module in our recognition model.
 
 ### Feature extraction
 
-We employ CNN to design the feature extraction module. The feature extraction layer is composed of 7 layers of CNN, the dimensions of the feature extraction layer are clearly marked in the framework. The output of CNN is a sequence
+We employ CNN to design the feature extraction module. The feature extraction layer is composed of 7 layers of CNN, the dimensions of the feature extraction layer are clearly marked in the framework. The output of CNN is a  feature sequence of 25\*1\*512 size.
 
 ### Word recognition
 
