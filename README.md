@@ -4,40 +4,7 @@ A machine learning model designed for UWB-based in-air handwriting recognition.
 
 ## Introduction
 
-[Connectionist Temporal Classification](http://www.cs.toronto.edu/~graves/icml_2006.pdf)
-is a loss function useful for performing supervised learning on sequence data,
-without needing an alignment between input data and labels.  For example, CTC
-can be used to train
-[end-to-end](http://www.jmlr.org/proceedings/papers/v32/graves14.pdf)
-[systems](http://arxiv.org/pdf/1408.2873v2.pdf) for
-[speech recognition](http://arxiv.org/abs/1512.02595),
-which is how we have been using it at Baidu's Silicon Valley AI Lab.
-
-![DSCTC](/doc/deep-speech-ctc-small.png)
-
-The illustration above shows CTC computing the probability of an output
-sequence "THE CAT ", as a sum over all possible alignments of input sequences
-that could map to "THE CAT ", taking into account that labels may be duplicated
-because they may stretch over several time steps of the input data (represented by
-the spectrogram at the bottom of the image).
-Computing the sum of all such probabilities explicitly would be prohibitively costly due to the
-combinatorics involved, but CTC uses dynamic programming to dramatically
-reduce the complexity of the computation. Because CTC is a differentiable function,
-it can be used during standard SGD training of deep neural networks.
-
-In our lab, we focus on scaling up recurrent neural networks, and CTC loss is an
-important component. To make our system efficient, we parallelized the CTC
-algorithm, as described in [this paper](http://arxiv.org/abs/1512.02595).
-This project contains our high performance CPU and CUDA versions of the CTC loss,
-along with bindings for [Torch](http://torch.ch/).
-The library provides a simple C interface, so that it is easy to
-integrate into deep learning frameworks.
-
-This implementation has improved training scalability beyond the
-performance improvement from a faster parallel CTC implementation. For
-GPU-focused training pipelines, the ability to keep all data local to
-GPU memory allows us to spend interconnect bandwidth on increased data
-parallelism.
+Using a watch equipped with UWB, users can write in the air while wearing the watch and interact with smart phone, TV and other devices for handwriting recongnition. Due to the large sensing range of UWB, it will not be restricted by the distance such as WiFi and acoustic sensing methods.  UWB-based sensing has the opportunity to support users to continuously perform handwriting in a more free manner. By designing a handwriting recognition method, the in-air handwriting interaction can be more flexible.
 
 ## Data process and augmentation
 The deep neutral network needs large training dataset to obtain the high-accuracy performance. However, it is difficult to manually collect large number of handwriting samples in practice. We employ data augmentation technique to enlarge the dataset. Considering handwriting in different position, orientation, speed, and size, we correspondingly conduct \textit{translation}, \textit{rotation}, \textit{stretch} and \textit{scaling} operations for collected data samples. Note that user performs handwriting in 3D-space, we process the UWB collected handwriting trajectory data through 3D-mapping as in Section 4 and thus compress to the 2D plane. After processing with these operations, the data can be increased. Besides, to further improve model generalization ability, we design to combine the existing handwritten dataset~\cite{Handwriting} to enhance the training set. We integrate a commonly used generated handwriting dataset, which includes 8 different writing styles. 
