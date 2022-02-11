@@ -43,12 +43,7 @@ We employ CNN to design the feature extraction module. The feature extraction la
 
 ### Word recognition
 
-To realize word recognition, we build a two-layer bidirectonal LSTM network to process the feature sequence. The goal of LSTM is to predict which character this
-
-Based on the feature extraction module, we notice that the feature sequence extracted by CNN corresponds to different positions of word. This means that a feature sequence may correspond to a part of a letter, and adjacent feature sequences can also reflect the difference between adjacent letters. To recognize words, we built a two-layer bidirectional LSTM (Long Short-term Memory) network to process the feature sequence corresponding to the probability vector on different time. The goal of LSTM is to predict which character this rectangular area is, that is, to predict according to the feature vector extracted by the multi-layer CNN, and obtain the softmax probability distribution of all letters.
-
-Then we employ Connectionist Temporal Classification (CTC) layer~\cite{} to deal with the problem of variable-length sequence alignment. The CTC loss function is obtained to carry out end-to-end joint training. For example, if there are 6 time windows while recognizing handwriting, ideally, t0, t1, and t2 should be mapped to "u", t3, t4 should be mapped to "b", and t5 should be mapped to "i". And then concatenating these character sequences to get "uuubbi", we merge the consecutive repeated characters into one, and the final result is "ubi". When the word itself contains repeated letters (such as hello), CTC solves this problem by introducing a blank character. The character prediction sequence (such as “-hh-el-ll-o–”) can be obtained according to the probability vector. At last, we use HMM’s Forward-Backward algorithm and dynamic programming algorithm to calculate
-the probability. Thus, the CTC loss function ($L_p$) is calculated using cross entropy with word label.
+To realize word recognition, we build a two-layer bidirectonal LSTM network to process the feature sequence. We built a two-layer bidirectional LSTM (Long Short-term Memory) network to process the feature sequence. Then we employ Connectionist Temporal Classification (CTC) layer to deal with the problem of variable-length sequence alignment.
 
 ### Domain classification
 
