@@ -6,13 +6,16 @@ A machine learning model designed for UWB-based in-air handwriting recognition.
 
 Using a watch equipped with UWB, users can write in the air while wearing the watch and interact with smart phone, TV and other devices for handwriting recongnition. Due to the large sensing range of UWB, it will not be restricted by the distance such as WiFi and acoustic sensing methods.  UWB-based sensing has the opportunity to support users to continuously perform handwriting in a more free manner. By designing a handwriting recognition method, the in-air handwriting interaction can be more flexible.
 
-## Handwriting data collection and agumentation
+## Handwriting data agumentation
 
 Below are a few samples of handwriting words collected by UWB integrated on iPhone and Apple Watch.
 **![HandwritingResults](/doc/Handwriting-results.png)**
 
 The deep neutral network needs large training dataset to obtain the high-accuracy performance. However, it is difficult to manually collect large number of handwriting samples in practice. So, we employ data augmentation technique to enlarge the dataset. 
-Considering handwriting in different position, orientation, speed, and size, we correspondingly conduct *translation*, *rotation*, *stretch* and *scaling* operations for collected data samples. Note that user performs handwriting in 3D-space, we process the UWB collected handwriting trajectory data through 3D-mapping as in Section 4 and thus compress to the 2D plane. After processing with these operations, the data can be increased. Besides, to further improve model generalization ability, we design to combine the existing handwritten dataset~\cite{Handwriting} to enhance the training set. We integrate a commonly used generated handwriting dataset, which includes 8 different writing styles. 
+
+Considering handwriting in different position, orientation, speed, and size, we correspondingly conduct *translation*, *rotation*, *stretch* and *scaling* operations for collected data samples. After processing with these operations, the data can be increased by six times.
+
+To realize data agumentation on your own dataset,yo
 
 ## System Overview
 **![Framework](/doc/Framework.png)**
