@@ -48,8 +48,16 @@ To realize word recognition, we build a two-layer bidirectonal LSTM network to p
 
 To enhance the system generalization ability on different users and unseen words, we use an adversarial netword to train the model in order to extract features only related to word content rather than users' personal writing style. In the adversarial network, a [public handwriting dataset](https://github.com/sjvasquez/handwriting-synthesis) is used as source domain, and our UWB collected dataset is used ar cource domain.
 
-You can use [model_train.py](model_train.py) to train a recoginition model with your own dataset. Before training, make sure that you have installed Python 3.8 (Download [Here](https://www.python.org/)) and PyTorch 1.7(GPU version)( Download [Here](https://pytorch.org/)). You should also put the previously obtained enchanced data in path \data\train_data, then enter the following command in the console.
+## Model training
+
+If you want to train a recognition model with your own dataset, use [model_train.py](model_train.py). Before training, make sure that you have installed Python 3.8 (Download [Here](https://www.python.org/)) and PyTorch 1.7(GPU version)( Download [Here](https://pytorch.org/)). You should also put the previously obtained enchanced data in path \data\train_data, then enter the following command in the console.
 
 ```
 python data_aug.py
+```
+
+After model training, you can run [rec_data.py](/rec_data.py) to test this model on the validation set.
+
+```
+python rec_data.py
 ```
