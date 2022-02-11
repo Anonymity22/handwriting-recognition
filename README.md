@@ -61,3 +61,5 @@ After model training, you can run [rec_data.py](/rec_data.py) to test this model
 ```
 python rec_data.py
 ```
+
+We offer some example UWB handwriting data in path */data/example*, which can be used to train a model or validate your own model. A previously trained model is alse offered in path */model/example*
