@@ -16,6 +16,7 @@ The deep neutral network needs large training dataset to obtain the high-accurac
 Considering handwriting in different position, orientation, speed, and size, we correspondingly conduct *translation*, *rotation*, *stretch* and *scaling* operations for collected data samples. After processing with these operations, the data can be increased by six times.
 
 *data_aug.py* can help you to realize data agumentation on your own dataset.
+
 Usage:
 ```
 python data_aug.py
