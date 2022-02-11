@@ -1,6 +1,6 @@
 # In-air Handwriting Recognition
 
-A learning model for UWB-based in-air handwriting recognition
+A machine learning model designed for UWB-based in-air handwriting recognition
 
 ## Introduction
 
