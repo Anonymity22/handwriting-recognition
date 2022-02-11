@@ -9,6 +9,7 @@ Using a watch equipped with UWB, users can write in the air while wearing the wa
 ## Handwriting data agumentation
 
 Below are a few samples of handwriting words collected by UWB integrated on iPhone and Apple Watch.
+
 **![HandwritingResults](/doc/Handwriting-results.png)**
 
 The deep neutral network needs large training dataset to obtain the high-accuracy performance. So we employ data augmentation technique to enlarge the dataset. 
