@@ -17,7 +17,7 @@ Considering handwriting in different position, orientation, speed, and size, we 
 
 [data_aug.py](/data_aug.py) can help you to realize data agumentation on your own dataset.
 
-###Usage:
+### Usage:
 ```
 python data_aug.py
 ```
