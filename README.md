@@ -25,7 +25,7 @@ python data_aug.py
 
 ## System overview
 
-To achieve the free-style and user-independent handwriting recognition, we propose a recognition model to support free and continuous handwriting across different users. The model combines the recognition capability of Convolutional Recurrent Neural Network (CRNN) and the Domain-Adversarial Training of Neural Networks (DANN). The model is designed for UWB based handwriting recognition when a small number of UWB based data sets are obtained. Our model considers both recognition accuracy and generalization ability. Below is the framework of our machine-learning model.
+To achieve the free-style and user-independent handwriting recognition, we propose a recognition model to support free and continuous handwriting across different users. The model combines the recognition capability of Convolutional Recurrent Neural Network (CRNN) and the Domain-Adversarial Training of Neural Networks (DANN). The model is designed for UWB based handwriting recognition when a small number of UWB based data sets are obtained. Our model considers both recognition accuracy and generalization ability. Below is the framework of our recognition model.
 
 **![Framework](/doc/Framework.png)**
 
