@@ -16,9 +16,8 @@ The deep neutral network needs large training dataset to obtain the high-accurac
 
 Considering handwriting in different position, orientation, speed, and size, we correspondingly conduct *translation*, *rotation*, *stretch* and *scaling* operations for collected data samples. After processing with these operations, the data can be increased by six times.
 
-Algorithm in [data_aug.py](/data_aug.py) can help you realize data agumentation on your own dataset.
+Algorithm defined in [data_aug.py](/data_aug.py) can help you realize data agumentation on your own dataset. Before using this algorithm, you should put the raw handwriting data in path *\data\raw_data*, then enter the following command in the console.
 
-### Usage:
 ```
 python data_aug.py
 ```
@@ -49,5 +48,8 @@ To realize word recognition, we build a two-layer bidirectonal LSTM network to p
 
 To enhance the system generalization ability on different users and unseen words, we use an adversarial netword to train the model in order to extract features only related to word content rather than users' personal writing style. In the adversarial network, a [public handwriting dataset](https://github.com/sjvasquez/handwriting-synthesis) is used as source domain, and our UWB collected dataset is used ar cource domain.
 
+You can use [model_train.py](model_train.py) to train a recoginition model with your own dataset. Before training, make sure that you have installed Python 3.8 (Download [Here](https://www.python.org/)) and PyTorch 1.7(GPU version)( Download [Here](https://pytorch.org/)). You should also put the previously obtained enchanced data in path \data\train_data, then enter the following command in the console.
 
-## Usage
+```
+python data_aug.py
+```
