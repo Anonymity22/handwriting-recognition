@@ -50,7 +50,7 @@ To enhance the system generalization ability on different users and unseen words
 
 ## Model training
 
-If you want to train a recognition model with your own dataset, use [model_train.py](model_train.py). Before training, make sure that you have installed Python 3.8 (Download [Here](https://www.python.org/)) and PyTorch 1.7(GPU version)( Download [Here](https://pytorch.org/)). Then put the previously obtained enchanced data in path \data\train_data, and enter the following command in the console.
+If you want to train a recognition model with your own dataset, use [model_train.py](model_train.py). Before training, ensure that you have installed Python 3.8 (Download [Here](https://www.python.org/)) and PyTorch 1.7(GPU version)( Download [Here](https://pytorch.org/)). Then put the previously obtained enchanced data in path \data\train_data, and enter the following command in the console.
 
 ```
 python data_aug.py
