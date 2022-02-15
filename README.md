@@ -46,7 +46,7 @@ To realize word recognition, we build a two-layer bidirectonal LSTM network to p
 
 ### Domain classification
 
-To enhance the system generalization ability on different users and unseen words, we use an adversarial netword to train the model in order to extract features only related to word content rather than users' personal writing style. In the adversarial network, a [public handwriting dataset](https://github.com/sjvasquez/handwriting-synthesis) is used as source domain, and our UWB collected dataset is used ar cource domain.
+To enhance the system generalization ability on different users and unseen words, we use an adversarial netword to train the model in order to extract features only related to word content rather than users' personal writing style. In the adversarial network, a [public handwriting dataset](https://github.com/sjvasquez/handwriting-synthesis) is used as source domain, and our UWB collected dataset is used as cource domain.
 
 ## Model training
 
