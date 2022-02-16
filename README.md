@@ -16,7 +16,7 @@ The deep neutral network needs large training dataset to obtain the high-accurac
 
 Considering handwriting in different position, orientation, speed, and size, we correspondingly conduct *translation*, *rotation*, *stretch* and *scaling* operations for collected data samples. After processing with these operations, the data can be increased by six times.
 
-Algorithm defined in [data_aug.py](/data_aug.py) can help you realize data agumentation on your own dataset. Before using this algorithm, you should put the raw handwriting data in path */data/raw_data*, then enter the following command in the console.
+Algorithm defined in [data_aug.py](/data_aug.py) can help you realize data agumentation on your own dataset. Before using this algorithm, you should put the raw handwriting data in path /data/raw_data, then enter the following command in the console.
 
 ```
 python data_aug.py
@@ -50,7 +50,7 @@ To enhance the system generalization ability on different users and unseen words
 
 ## Model training
 
-If you want to train a recognition model with your own dataset, use [model_train.py](model_train.py). Before training, make sure that you have installed Python 3.8 (Download [Here](https://www.python.org/)) and PyTorch 1.7.0 (GPU version) (Download [Here](https://pytorch.org/)). Then put the previously obtained enchanced data in path */data/train_data*, and enter the following command in the console.
+If you want to train a recognition model with your own dataset, use [model_train.py](model_train.py). Before training, make sure that you have installed Python 3.8 (Download [Here](https://www.python.org/)) and PyTorch 1.7.0 (GPU version) (Download [Here](https://pytorch.org/)). Then put the previously obtained enchanced data in path /data/train_data, and enter the following command in the console.
 
 ```
 python train_crann.py
@@ -62,4 +62,4 @@ After model training, you can run [demo_crann.py](/rec_data.py) to test this mod
 python demo_crann.py
 ```
 
-We offer some example UWB handwriting data in path */data/example*, which can be used to train a model or validate your own model. A previously trained model is alse offered in path */model/example*
+We offer some example UWB handwriting data in path /data/example, which can be used to train a model or validate your own model. A previously trained model is alse offered in path /model/example
