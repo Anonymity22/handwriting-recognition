@@ -56,7 +56,7 @@ If you want to train a recognition model with your own dataset, use [model_train
 python train_crann.py
 ```
 
-After model training, you can run [demo_crann.py](/rec_data.py) to test this model on the validation set.
+After model training, you can run [demo_crann.py](/rec_data.py) to test the model on the validation set.
 
 ```
 python demo_crann.py
