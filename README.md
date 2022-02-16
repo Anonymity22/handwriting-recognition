@@ -50,7 +50,7 @@ To enhance the system generalization ability on different users and unseen words
 
 ## Model training
 
-If you want to train a recognition model with your own dataset, use [model_train.py](model_train.py). Before training, make sure that you have installed Python 3.8 (Download [Here](https://www.python.org/)) and PyTorch 1.7(GPU version)( Download [Here](https://pytorch.org/)). Then put the previously obtained enchanced data in path \data\train_data, and enter the following command in the console.
+If you want to train a recognition model with your own dataset, use [model_train.py](model_train.py). Before training, make sure that you have installed Python 3.8 (Download [Here](https://www.python.org/)) and PyTorch 1.7.0 (GPU version) (Download [Here](https://pytorch.org/)). Then put the previously obtained enchanced data in path \data\train_data, and enter the following command in the console.
 
 ```
 python data_aug.py
@@ -59,7 +59,7 @@ python data_aug.py
 After model training, you can run [rec_data.py](/rec_data.py) to test this model on the validation set.
 
 ```
-python rec_data.py
+python demo_crann.py
 ```
 
 We offer some example UWB handwriting data in path */data/example*, which can be used to train a model or validate your own model. A previously trained model is alse offered in path */model/example*
